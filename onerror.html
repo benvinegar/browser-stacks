@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+	var onerrorArgs = [];
+	window.onerror = function (message, url, lineNo, colNo, err) {
+	  onerrorArgs = Array.prototype.slice.call(arguments, 0);
+	}
+	</script>
+	<script>
+		(function () {
+			function bar() {
+				baz();
+			}
+
+			function foo() {
+				new bar();
+			}
+
+			foo('a');
+		})();
+	</script>
+</body>
+</html>

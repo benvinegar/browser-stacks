@@ -80,7 +80,7 @@ function js_eval(name, version, src, cb) {
             // For whatever reason, I couldn't get an about:blank/default
             // Selenium page to work w/ window.onerror. I had to load an actual page.
             // But someone could try again / have better luck than me.
-            browser.get('http://output.jsbin.com/qagibi/3', function (err, res) {
+            browser.get('http://benvinegar.github.io/browser-stacks/onerror.html', function (err, res) {
                 if (err) {
                     return cb(err);
                 }
