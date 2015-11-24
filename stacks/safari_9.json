@@ -1,0 +1,5 @@
+{
+  "column": 20,
+  "line": 3,
+  "stack": "bar\nfoo\n\n\nanonymous\nexecuteScript\nc@http://localhost:1034/connect.html?url=ws%3A%2F%2Flocalhost%3A1034:62:60\nc@[native code]\noc@http://localhost:1034/connect.html?url=ws%3A%2F%2Flocalhost%3A1034:57:316\nda@http://localhost:1034/connect.html?url=ws%3A%2F%2Flocalhost%3A1034:50:94\nforEach@[native code]\nca@http://localhost:1034/connect.html?url=ws%3A%2F%2Flocalhost%3A1034:49:339\n[native code]\nQb@http://localhost:1034/connect.html?url=ws%3A%2F%2Flocalhost%3A1034:16:51\npromiseReactionJob@[native code]"
+}

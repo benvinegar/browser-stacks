@@ -1,0 +1,11 @@
+[
+  "'baz' is undefined",
+  "http://benvinegar.github.io/browser-stacks/onerror.html",
+  16,
+  5,
+  {
+    "stack": "ReferenceError: 'baz' is undefined\n   at bar (http://benvinegar.github.io/browser-stacks/onerror.html:16:5)\n   at foo (http://benvinegar.github.io/browser-stacks/onerror.html:20:5)\n   at Anonymous function (http://benvinegar.github.io/browser-stacks/onerror.html:23:4)\n   at Global code (http://benvinegar.github.io/browser-stacks/onerror.html:14:4)",
+    "number": -2146823279,
+    "description": "'baz' is undefined"
+  }
+]

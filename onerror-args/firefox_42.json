@@ -1,0 +1,33 @@
+[
+  "ReferenceError: baz is not defined",
+  "http://benvinegar.github.io/browser-stacks/onerror.html",
+  16,
+  5,
+  {
+    "stackTrace": [
+      {
+        "columnNumber": 5,
+        "lineNumber": 16,
+        "methodName": "bar",
+        "fileName": "http://benvinegar.github.io/browser-stacks/onerror.html"
+      },
+      {
+        "columnNumber": 5,
+        "lineNumber": 20,
+        "methodName": "foo",
+        "fileName": "http://benvinegar.github.io/browser-stacks/onerror.html"
+      },
+      {
+        "columnNumber": 4,
+        "fileName": "http://benvinegar.github.io/browser-stacks/onerror.html",
+        "lineNumber": 23
+      },
+      {
+        "columnNumber": 4,
+        "fileName": "http://benvinegar.github.io/browser-stacks/onerror.html",
+        "lineNumber": 14
+      }
+    ],
+    "message": "baz is not defined"
+  }
+]

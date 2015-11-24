@@ -1,0 +1,3 @@
+{
+  "stack": "anonymous/bar@https://www.mozilla.org/en-US/firefox/42.0/firstrun/learnmore/ line 69 > Function:2:11\nfoo@https://www.mozilla.org/en-US/firefox/42.0/firstrun/learnmore/ line 69 > Function:6:5\nanonymous/<@https://www.mozilla.org/en-US/firefox/42.0/firstrun/learnmore/ line 69 > Function:11:5\nanonymous/<@https://www.mozilla.org/en-US/firefox/42.0/firstrun/learnmore/ line 69 > Function:10:2\nanonymous@https://www.mozilla.org/en-US/firefox/42.0/firstrun/learnmore/ line 69 > Function:1:1\nhandleEvaluateEvent@https://www.mozilla.org/en-US/firefox/42.0/firstrun/learnmore/:69:20\n"
+}

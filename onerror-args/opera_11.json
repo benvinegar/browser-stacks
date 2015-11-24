@@ -1,0 +1,5 @@
+[
+  "Uncaught exception: ReferenceError: Undefined variable: baz",
+  "http://benvinegar.github.io/browser-stacks/onerror.html",
+  4
+]
