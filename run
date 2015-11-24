@@ -16,27 +16,6 @@ var js_str = '(function() { ' + src + ' })();';
 
 var stackdir = path.join(__dirname, 'stacks');
 
-browsers(function(err, map) {
-    if (err) {
-        return console.error(err);
-    }
-
-    // make list of unique versions
-    var to_test = {};
-
-    for (var name in map) {
-        map[name].forEach(function(browser) {
-            to_test[browser.name + browser.version] = browser;
-        });
-    }
-
-    var list = Object.keys(to_test).map(function(key) {
-        return to_test[key];
-    });
-
-    run(list);
-});
-
 function run(list) {
     inorder(list, function(browser, done) {
         delete browser.platform;
@@ -90,3 +69,5 @@ function js_eval(name, version, src, cb) {
         });
     });
 }
+
+run(browsers);
