@@ -15,6 +15,7 @@ var src = fs.readFileSync(__dirname + '/test.js', 'utf8');
 var js_str = '(function() { ' + src + ' })();';
 
 var stackdir = path.join(__dirname, 'stacks');
+var onerrorArgsDir = path.join(__dirname, 'onerror-args');
 
 function run(list) {
     inorder(list, function(browser, done) {
@@ -26,11 +27,21 @@ function run(list) {
                 return done();
             }
 
+            var stack = res[0];
             var filename = browser.name + '_' + browser.version + '.json';
-            debug('saving %s', filename);
+            var outPath = path.join(stackdir, filename);
+            debug('saving %s', outPath);
 
-            var str = JSON.stringify(res, null, '  ');
-            fs.writeFileSync(path.join(stackdir, filename), str, 'utf-8')
+            var str = JSON.stringify(stack, null, '  ');
+            fs.writeFileSync(outPath, str, 'utf-8');
+
+            var onerrorArgs = res[1];
+            outPath = path.join(onerrorArgsDir, filename);
+            debug('saving %s', outPath);
+
+            str = JSON.stringify(onerrorArgs, null, '  ');
+            fs.writeFileSync(outPath, str, 'utf-8');
+
             done();
         });
     }, function(err) {
@@ -60,12 +71,29 @@ function js_eval(name, version, src, cb) {
         }
 
         browser.eval(src, function(err, res) {
-            browser.quit();
             if (err) {
                 return cb(err);
             }
 
-            return cb(null, res);
+            var stackResult = res;
+
+            // For whatever reason, I couldn't get an about:blank/default
+            // Selenium page to work w/ window.onerror. I had to load an actual page.
+            // But someone could try again / have better luck than me.
+            browser.get('http://output.jsbin.com/qagibi/3', function (err, res) {
+                if (err) {
+                    return cb(err);
+                }
+
+                browser.eval('onerrorArgs', function (err, onerrorResult) {
+                    if (err) {
+                        return cb(err);
+                    }
+
+                    browser.quit();
+                    return cb(null, [stackResult, onerrorResult]);
+                });
+            });
         });
     });
 }
